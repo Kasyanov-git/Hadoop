@@ -33,7 +33,7 @@ def python_data_stream_example():
     env.get_checkpoint_config().set_checkpoint_storage(checkpoint_storage)
 # -------------------------------------------------------------
 
-#Блок 1 Задание 2-------------------------------------------------------------
+#Блок 1 Задание 2(Не до конца разобрался. Ошибки в настройке hdfs)------------------------------
     # checkpoint_storage_hdfs = FileSystemCheckpointStorage("hdfs://hdfs:9870/flink/checkpoints")
     # env.get_checkpoint_config().set_checkpoint_storage(checkpoint_storage_hdfs)
 # -------------------------------------------------------------
