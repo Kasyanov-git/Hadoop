@@ -65,7 +65,7 @@ def python_data_stream_example():
     ds = ds.map(TemperatureConversion())
 # Блок 2 Задание 1-------------------------------------------------------------
     # Применение Tumbling Windows
-    ds.key_by(lambda value: value[0]) \
+    ds.key_by(lambda value: value[1]) \
         .window(TumblingEventTimeWindows.of(Time.seconds(10))) \
         .reduce(MaxTemperatureReducer()) \
         .sink_to(sink)
@@ -73,7 +73,7 @@ def python_data_stream_example():
 
 # Блок 2 Задание 2-------------------------------------------------------------
     # Применение Sliding Windows
-    # ds.key_by(lambda value: value[0]) \
+    # ds.key_by(lambda value: value[1]) \
     #   .window(SlidingEventTimeWindows.of(Time.minutes(5), Time.minutes(1))) \
     #   .reduce(MaxTemperatureReducer()) \
     #   .sink_to(sink)
@@ -81,7 +81,7 @@ def python_data_stream_example():
 
 # Блок 2 Задание 3-------------------------------------------------------------
     # Применение Session Windows
-    # ds.key_by(lambda value: value[0]) \
+    # ds.key_by(lambda value: value[1]) \
     #   .window(EventTimeSessionWindows.with_gap(Time.minutes(10))) \
     #   .reduce(MaxTemperatureReducer()) \
     #   .sink_to(sink)
